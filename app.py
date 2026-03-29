@@ -4,7 +4,12 @@ import pandas as pd
 import numpy as np
 
 st.set_page_config(page_title="Disease Predictor", page_icon="🏥", layout="wide")
+import gdown
 
+url = "https://drive.google.com/file/d/1v9P_W1BGWI4zlQXIFuUYutpnWeTkLi4m/view?usp=sharing"
+output = "model.pkl"
+
+gdown.download(url, output, quiet=False)
 # ── Load model ───────────────────────────────────────────────
 bundle   = joblib.load('model.pkl')
 model    = bundle['model']
